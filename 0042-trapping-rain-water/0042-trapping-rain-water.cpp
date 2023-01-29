@@ -9,7 +9,7 @@ public:
                 v.pop();
                 if(!v.empty()){
                     int w = i-v.top()-1;
-                    ans+=w*(max(0,min(height[v.top()]-h,height[i]-h)));
+                    ans+=w*min(height[v.top()]-h,height[i]-h);
                 }
             }
             v.push(i);
