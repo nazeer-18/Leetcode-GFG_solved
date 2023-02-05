@@ -1,15 +1,16 @@
 class Solution {
 public:
     long long pickGifts(vector<int>& gifts, int k) {
-        for(int i = 0; i< k; i++){
-            sort(gifts.begin(),gifts.end());
-            int idx = gifts.size()-1;
-            int val = sqrt(gifts[idx]);
-            gifts[idx]= val;
+        long long sum = 0;
+        priority_queue<int> pq;
+        for(auto i : gifts) pq.push(i);
+        while(k--){
+            pq.push(sqrt(pq.top()));
+            pq.pop();
         }
-        long long sum =0;
-        for(int i =0;i<gifts.size();i++){
-            sum+=gifts[i];
+        while(pq.size()>0) {
+            sum+=pq.top();
+            pq.pop();
         }
         return sum;
     }
