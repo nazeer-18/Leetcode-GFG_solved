@@ -21,7 +21,7 @@ public:
                     m++;
                     i++;
                 }
-                while(i<j && j>0 && arr[j]==arr[j-1]){
+                while(j>0 && arr[j]==arr[j-1]){
                     o++;
                     j--;
                 }
