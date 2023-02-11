@@ -31,7 +31,7 @@ public:
             first = fruits[i];
             second = fruits[j];
         }
-          maxLen = max(maxLen,j-i+1);
+         maxLen = max(maxLen,j-i+1);
         j++;
     } 
         return maxLen;
