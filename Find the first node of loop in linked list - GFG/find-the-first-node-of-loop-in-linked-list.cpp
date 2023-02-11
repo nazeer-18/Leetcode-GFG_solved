@@ -45,7 +45,6 @@ void loopHere(Node* head, Node* tail, int position)
 class Solution
 {
     public:
-     //Function to find first node if the linked list has a loop.
     int findFirstNode(Node* head)
     {
         // your code here
