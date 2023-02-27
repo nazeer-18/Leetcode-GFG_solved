@@ -31,10 +31,6 @@ public:
                 temp.push_back(n-1);
                 ans.push_back(temp);
         }
-        // for(auto i : ans){
-        //     for(auto j : i) cout<<j<<" ";
-        //     cout<<endl;
-        //}
         return ans;
     }
 };
