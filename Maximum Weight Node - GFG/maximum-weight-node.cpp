@@ -15,7 +15,7 @@ class Solution
       for(int i = 0; i < N; i++) {
           if(Edge[i]!=-1){ v[Edge[i]] += i;}
       }
-      int i,ans = *max_element(begin(v),end(v));
+         int i,ans = *max_element(begin(v),end(v));
       for( i = N-1; v[i]!= ans; i--);
       return i;
   }
