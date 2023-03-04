@@ -1,15 +1,15 @@
 class MyQueue {
 public:
+    stack<int> s1,s2;
+    int val;
     MyQueue() {
         
     }
-    stack<int> s1;
-    stack<int> s2;
     void push(int x) {
         s1.push(x);
     }
     int pop() {
-        int val = peek();
+        val = peek();
         s2.pop();
         return val;
     }
