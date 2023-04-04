@@ -11,8 +11,7 @@ class Solution {
   public:
     long long int minOperations(int n) {
         // Code here
-        long long int ans = n;
-        ans = ans*n;
+        long long int ans = (n*(long long)n);
         return ans/4;
     }
 };
