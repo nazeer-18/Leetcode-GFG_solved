@@ -14,6 +14,7 @@ time = [2, 3, 1]
 Total time taken by the 1st taxi will be: (4-1)*2 = 6
 Total time taken by the 2nd taxi will be: (5-4)*3 = 3
 Total time taken by the 3rd taxi will be: (6-4)*1 = 2
+
 So, the minimum time will be 2 sec.</span></pre>
 
 <p>&nbsp;</p>
