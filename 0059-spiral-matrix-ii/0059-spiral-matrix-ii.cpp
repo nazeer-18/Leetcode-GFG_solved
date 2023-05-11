@@ -8,7 +8,7 @@ public:
                 ans[rowStart][i]=cnt;
                 cnt++;
             }
-            rowStart++;
+            rowStart++;       
             for(int i = rowStart; i <= rowEnd; i++) {
                 ans[i][colEnd]=cnt;
                 cnt++;
