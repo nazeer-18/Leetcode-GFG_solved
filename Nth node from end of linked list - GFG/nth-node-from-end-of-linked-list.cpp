@@ -64,18 +64,21 @@ int main()
 int getNthFromLast(Node *head, int n)
 {
        // Your code here
-       int size=0;
-       Node * temp = head;
-       while(temp!=NULL){
-           size++;
-           temp = temp->next;
+       int i = 0,len=0;
+       Node* temp = head;
+       while(temp) {
+           len++;
+           temp=temp->next;
        }
-       if(n>size) return -1;
-       size-=n;
+      // cout<<len<<endl;
+       if(n>len) return -1;
+       len = len-n+1;
+       //cout<<len<<endl;
        temp=head;
-       while(temp!=NULL && size){
-           temp = temp->next;
-           size--;
+       i=1;
+       while(i!=len){
+           temp=temp->next;
+           i++;
        }
        return temp->data;
 }
