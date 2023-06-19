@@ -1,0 +1,28 @@
+<h2><a href="https://leetcode.com/problems/find-the-highest-altitude/">1732. Find the Highest Altitude</a></h2><h3>Easy</h3><hr><div style="null;/*startDM*/undefined/*endDM*/;/*startDM*/undefined/*endDM*/"><p style="null;/*startDM*/undefined/*endDM*/;/*startDM*/undefined/*endDM*/">There is a biker going on a road trip. The road trip consists of <code style="null;/*startDM*/background-color: #222222 !important;color: #eeeeee !important;/*endDM*/;/*startDM*/background-color: #222222 !important;color: #eeeeee !important;/*endDM*/">n + 1</code> points at different altitudes. The biker starts his trip on point <code style="null;/*startDM*/background-color: #222222 !important;color: #eeeeee !important;/*endDM*/;/*startDM*/background-color: #222222 !important;color: #eeeeee !important;/*endDM*/">0</code> with altitude equal <code style="null;/*startDM*/background-color: #222222 !important;color: #eeeeee !important;/*endDM*/;/*startDM*/background-color: #222222 !important;color: #eeeeee !important;/*endDM*/">0</code>.</p>
+
+<p style="null;/*startDM*/undefined/*endDM*/;/*startDM*/undefined/*endDM*/">You are given an integer array <code style="null;/*startDM*/background-color: #222222 !important;color: #eeeeee !important;/*endDM*/;/*startDM*/background-color: #222222 !important;color: #eeeeee !important;/*endDM*/">gain</code> of length <code style="null;/*startDM*/background-color: #222222 !important;color: #eeeeee !important;/*endDM*/;/*startDM*/background-color: #222222 !important;color: #eeeeee !important;/*endDM*/">n</code> where <code style="null;/*startDM*/background-color: #222222 !important;color: #eeeeee !important;/*endDM*/;/*startDM*/background-color: #222222 !important;color: #eeeeee !important;/*endDM*/">gain[i]</code> is the <strong style="null;/*startDM*/undefined/*endDM*/;/*startDM*/undefined/*endDM*/">net gain in altitude</strong> between points <code style="null;/*startDM*/background-color: #222222 !important;color: #eeeeee !important;/*endDM*/;/*startDM*/background-color: #222222 !important;color: #eeeeee !important;/*endDM*/">i</code>​​​​​​ and <code style="null;/*startDM*/background-color: #222222 !important;color: #eeeeee !important;/*endDM*/;/*startDM*/background-color: #222222 !important;color: #eeeeee !important;/*endDM*/">i + 1</code> for all (<code style="null;/*startDM*/background-color: #222222 !important;color: #eeeeee !important;/*endDM*/;/*startDM*/background-color: #222222 !important;color: #eeeeee !important;/*endDM*/">0 &lt;= i &lt; n)</code>. Return <em style="null;/*startDM*/undefined/*endDM*/;/*startDM*/undefined/*endDM*/">the <strong style="null;/*startDM*/undefined/*endDM*/;/*startDM*/undefined/*endDM*/">highest altitude</strong> of a point.</em></p>
+
+<p style="null;/*startDM*/undefined/*endDM*/;/*startDM*/undefined/*endDM*/">&nbsp;</p>
+<p style="null;/*startDM*/undefined/*endDM*/;/*startDM*/undefined/*endDM*/"><strong class="example" style="null;/*startDM*/undefined/*endDM*/;/*startDM*/undefined/*endDM*/">Example 1:</strong></p>
+
+<pre style="null;/*startDM*/background-color: #222222 !important;color: #eeeeee !important;/*endDM*/;/*startDM*/background-color: #222222 !important;color: #eeeeee !important;/*endDM*/"><strong style="null;/*startDM*/undefined/*endDM*/;/*startDM*/undefined/*endDM*/">Input:</strong> gain = [-5,1,5,0,-7]
+<strong style="null;/*startDM*/undefined/*endDM*/;/*startDM*/undefined/*endDM*/">Output:</strong> 1
+<strong style="null;/*startDM*/undefined/*endDM*/;/*startDM*/undefined/*endDM*/">Explanation:</strong> The altitudes are [0,-5,-4,1,1,-6]. The highest is 1.
+</pre>
+
+<p style="null;/*startDM*/undefined/*endDM*/;/*startDM*/undefined/*endDM*/"><strong class="example" style="null;/*startDM*/undefined/*endDM*/;/*startDM*/undefined/*endDM*/">Example 2:</strong></p>
+
+<pre style="null;/*startDM*/background-color: #222222 !important;color: #eeeeee !important;/*endDM*/;/*startDM*/background-color: #222222 !important;color: #eeeeee !important;/*endDM*/"><strong style="null;/*startDM*/undefined/*endDM*/;/*startDM*/undefined/*endDM*/">Input:</strong> gain = [-4,-3,-2,-1,4,3,2]
+<strong style="null;/*startDM*/undefined/*endDM*/;/*startDM*/undefined/*endDM*/">Output:</strong> 0
+<strong style="null;/*startDM*/undefined/*endDM*/;/*startDM*/undefined/*endDM*/">Explanation:</strong> The altitudes are [0,-4,-7,-9,-10,-6,-3,-1]. The highest is 0.
+</pre>
+
+<p style="null;/*startDM*/undefined/*endDM*/;/*startDM*/undefined/*endDM*/">&nbsp;</p>
+<p style="null;/*startDM*/undefined/*endDM*/;/*startDM*/undefined/*endDM*/"><strong style="null;/*startDM*/undefined/*endDM*/;/*startDM*/undefined/*endDM*/">Constraints:</strong></p>
+
+<ul style="null;/*startDM*/undefined/*endDM*/;/*startDM*/undefined/*endDM*/">
+	<li style="null;/*startDM*/undefined/*endDM*/;/*startDM*/undefined/*endDM*/"><code style="null;/*startDM*/background-color: #222222 !important;color: #eeeeee !important;/*endDM*/;/*startDM*/background-color: #222222 !important;color: #eeeeee !important;/*endDM*/">n == gain.length</code></li>
+	<li style="null;/*startDM*/undefined/*endDM*/;/*startDM*/undefined/*endDM*/"><code style="null;/*startDM*/background-color: #222222 !important;color: #eeeeee !important;/*endDM*/;/*startDM*/background-color: #222222 !important;color: #eeeeee !important;/*endDM*/">1 &lt;= n &lt;= 100</code></li>
+	<li style="null;/*startDM*/undefined/*endDM*/;/*startDM*/undefined/*endDM*/"><code style="null;/*startDM*/background-color: #222222 !important;color: #eeeeee !important;/*endDM*/;/*startDM*/background-color: #222222 !important;color: #eeeeee !important;/*endDM*/">-100 &lt;= gain[i] &lt;= 100</code></li>
+</ul>
+</div>
