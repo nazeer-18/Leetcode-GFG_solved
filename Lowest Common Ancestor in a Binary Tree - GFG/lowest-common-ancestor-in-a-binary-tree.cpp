@@ -45,10 +45,9 @@ class Solution
        if(root->data == n1 || root->data == n2) return root;
        Node* left = lca(root->left,n1,n2);
        Node* right = lca(root->right,n1,n2);
-       if(!left && !right) return NULL;
-       else if(left && right) return root;
-       else if(left) return lca(root-> left,n1,n2);
-       else return lca(root-> right,n1,n2);
+       if(left && right) return root;
+       else if(left) return left;
+       else return right;
     }
 };
 
