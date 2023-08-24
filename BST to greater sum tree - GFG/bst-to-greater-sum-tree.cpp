@@ -98,18 +98,13 @@ class Solution
 {
     public:
     int ans=0;
-    void solve(Node* root){
-        if(!root) return;
-        solve(root->right);
-        ans+=root->data;
-        root->data =ans-root->data;
-        solve(root->left);
-    }
     void transformTree(struct Node *root)
     {
-        //code here
-        solve(root);
-        
+        if(!root) return;
+        transformTree(root->right);
+        ans+=root->data;
+        root->data =ans-root->data;
+        transformTree(root->left);
     }
 };
 
