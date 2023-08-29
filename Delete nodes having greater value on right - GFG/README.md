@@ -1,6 +1,7 @@
 # Delete nodes having greater value on right
 ## Medium
-<div class="problems_problem_content__Xm_eO"><p><span style="font-size: 18px;">Given a singly linked list, remove all the nodes which have a greater value on their right side.</span></p>
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size: 18px;">Given a singly linked list, remove all the nodes in the list which have any node on their right whose value is greater.&nbsp;</span><span style="font-size: 18px;">(Not just immidiate Right , but entire List on the Right)</span></p>
+<p><span style="font-size: 18px;">&nbsp;</span></p>
 <p><span style="font-size: 18px;"><strong>Example 1:</strong></span></p>
 <pre><span style="font-size: 18px;"><strong>Input:
 </strong>LinkedList = 12-&gt;15-&gt;10-&gt;11-&gt;5-&gt;6-&gt;2-&gt;3
