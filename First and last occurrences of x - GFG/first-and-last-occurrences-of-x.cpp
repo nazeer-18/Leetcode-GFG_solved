@@ -3,21 +3,35 @@
 using namespace std;
 
 // } Driver Code Ends
-vector<int> find(int a[], int n , int t )
+class Solution
 {
-    // code here
-    int i =0, x = n,y=-1;
-    for(;i<(n+1)/2;i++){
-        if(a[i]==t) {
-            x=min(x,i);
-            y=max(y,i);
-        }if(a[n-i-1]==t){
-            x=min(x,n-i-1);y=max(y,n-i-1);
-        }  
+    public:
+    vector<int> find(int a[], int n , int x )
+    {
+        // code here
+        vector<int> v{-1,-1};
+        int low = 0,mid,high = n-1;
+        while(low<=high){
+            mid = low+ (high-low)/2;
+            if(a[mid]>x){
+                high = mid-1;
+            }else if(a[mid]==x){
+                v[0] = v[1] = mid;
+                break;
+            }else{
+                low =mid+1;
+            }
+        }
+        int temp = mid;
+        while(mid>0 && a[mid-1]==x) mid--;
+        if(a[mid]==x) v[0] = mid;
+        while(temp<n-1 && a[temp+1]==x ) temp++;
+        if(a[temp]==x) v[1]=temp;
+        if(v[0]==-1 && v[1]!=-1) v[0]=v[1];
+        if(v[0]!=-1 && v[1]==-1) v[1]=v[0];
+        return v;
     }
-    if(x==n) x=-1;
-    return vector<int>{x,y};
-}
+};
 
 //{ Driver Code Starts.
 
@@ -33,7 +47,8 @@ int main()
         for(i=0;i<n;i++)
         cin>>arr[i];
         vector<int> ans;
-        ans=find(arr,n,x);
+        Solution ob;
+        ans=ob.find(arr,n,x);
         cout<<ans[0]<<" "<<ans[1]<<endl;
     }
     return 0;
