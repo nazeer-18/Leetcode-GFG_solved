@@ -108,11 +108,11 @@ class Solution{
         if(!root) return {INT_MAX,INT_MIN,1,0,0};
         vector<int> lt = help(root->left);
         vector<int> rt = help(root->right);
-        vector<int> curr(4,0);
+        vector<int> curr(5,0);
         curr[3]=1+lt[3]+rt[3];
         if(lt[2]==1 && rt[2]==1 && lt[1]<root->data && root->data<rt[0]){
             //both left and right subtrees are bsts and this node forms a bst
-            curr[0]=min(root->data,lt[0]); //min 
+            curr[0]=min(root->data,lt[0]); //min for leaf node
             curr[1]=max(root->data,rt[1]);
             curr[2]=1;
             curr[4]=lt[4]+rt[4]+1;
