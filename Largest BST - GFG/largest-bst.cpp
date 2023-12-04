@@ -105,21 +105,21 @@ class Solution{
     // Return the size of the largest sub-tree which is also a BST
     //min max isbSt size ans
     vector<int> help(Node* root){
-        if(!root) return {INT_MAX,INT_MIN,1,0,0};
-        vector<int> lt = help(root->left);
-        vector<int> rt = help(root->right);
-        vector<int> curr(5,0);
-        curr[3]=1+lt[3]+rt[3];
-        if(lt[2]==1 && rt[2]==1 && lt[1]<root->data && root->data<rt[0]){
-            //both left and right subtrees are bsts and this node forms a bst
-            curr[0]=min(root->data,lt[0]); //min for leaf node
-            curr[1]=max(root->data,rt[1]);
-            curr[2]=1;
-            curr[4]=lt[4]+rt[4]+1;
-            return curr;
-        }
-        curr[4]=max(lt[4],rt[4]);
+            if(!root) return {INT_MAX,INT_MIN,1,0,0};
+    vector<int> lt = help(root->left);
+    vector<int> rt = help(root->right);
+    vector<int> curr (5,0);
+    curr[3]=1+lt[3]+rt[3];
+    if(root->data>lt[1] && root->data<rt[0] && lt[2]==1 && rt[2]==1){
+        curr[0]=min(root->data,lt[0]);
+        curr[1]=max(root->data,rt[1]);
+        curr[2]=1;
+        curr[4]=curr[3];
         return curr;
+    }
+    curr[4]=max(lt[4],rt[4]);
+    return curr;
+
     }
     int largestBst(Node *root)
     {
