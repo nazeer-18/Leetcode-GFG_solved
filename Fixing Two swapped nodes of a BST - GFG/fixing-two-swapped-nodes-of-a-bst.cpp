@@ -101,29 +101,25 @@ bool compare(Node* a, Node* b, vector<pair<int, int>>& mismatch) {
 
 class Solution {
   public:
-    void inorder(Node*root,vector<Node*>&t){
+    void inorder(Node*root,Node* &first,Node* &second,Node* &last, Node* &prev){
         if(!root) return;
-        inorder(root->left,t);
-        t.push_back(root);
-        inorder(root->right,t);
+        inorder(root->left,first,second,last,prev);
+        if(prev && root->data<prev->data){
+            if(first){
+                last = root;
+                return;
+            }else{
+                first = prev;
+                second = root;
+            }
+        }
+        prev = root;
+        inorder(root->right,first,second,last,prev);
     }
     struct Node *correctBST(struct Node *root) {
         // code here
-        Node* f=NULL,*s=NULL,*l=NULL;
-        vector<Node*> t;
-        inorder(root,t);
-        int n=t.size(),i=0;
-        while(i<n-1){
-            if(t[i]->data>t[i+1]->data){
-                if(!f){
-                    f=t[i];
-                    s=t[i+1];
-                }else{
-                    l=t[i+1];
-                }
-            }
-            i++;
-        }
+        Node* f=NULL,*s=NULL,*l=NULL,*prev=NULL;
+        inorder(root,f,s,l,prev);
         if(l){
             swap(f->data,l->data);
         }else{
