@@ -12,7 +12,7 @@ class Solution
 {
   public:
   bool isFeasible(int a[],int n,int k,long long mid){
-       int np = 1,sum=0,i=0;
+       long long np = 1,sum=0,i=0;
        while(i<n){
            if(a[i]>mid) return false;
            else{
@@ -34,7 +34,7 @@ class Solution
         // return minimum time
         long long low = 0, high=0,mid,i=0;
         while(i<n){
-            //low = max(low,a[i]);
+            low = max(low,(long long)a[i]);
             high +=a[i];
             i++;
         }
