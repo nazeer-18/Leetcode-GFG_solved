@@ -11,45 +11,41 @@ using namespace std;
 class Solution
 {
   public:
-   bool isFeasible(int a[],int n,int m,long long mid){
-        long long ns=1,sum=0,i=0;
-        while(i<n){
-            if(a[i]>mid){
-                return false;
-            }else{
-                if(sum+a[i]>mid){
-                    ns++;
-                    sum=a[i];
-                    if(ns>m) return false;
-                }else{
-                    sum+=a[i];
-                }
-            }
-            i++;
-        }
-        return true;
-    }
-    long long minTime(int a[], int n, int m)
+  bool isFeasible(int a[],int n,int k,long long mid){
+       int np = 1,sum=0,i=0;
+       while(i<n){
+           if(a[i]>mid) return false;
+           else{
+               if(a[i]+sum>mid){
+                   sum=a[i];
+                   np++;
+                   if(np>k) return false;
+               }else{
+                   sum+=a[i];
+               }
+           }
+           i++;
+       }
+       return true;
+  }
+    long long minTime(int a[], int n, int k)
     {
         // code here
         // return minimum time
-         //if(m>n) return -1;
-        long long start = 0,end=0,i=0,mid=0,ans;
+        long long low = 0, high=0,mid,i=0;
         while(i<n){
-            end+=a[i];
+            //low = max(low,a[i]);
+            high +=a[i];
             i++;
         }
-        ans=end;
-        while(start<=end){
-            mid = start+(end-start)/2;
-            //cout<<start<<" "<<end<<" "<<mid<<" "<<ans<<endl;
-            if(isFeasible(a,n,m,mid)){
+        long long ans=high;
+        while(low<=high){
+            mid = low+(high-low)/2;
+            if(isFeasible(a,n,k,mid)){
+                high = mid-1;
                 ans=min(ans,mid);
-                end=mid-1;
-                //cout<<"yes "<<ans<<endl; 
             }else{
-                //cout<<"no "<<ans<<endl; 
-                start=mid+1;
+                low = mid +1;
             }
         }
         return ans;
