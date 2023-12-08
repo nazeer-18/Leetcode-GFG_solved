@@ -30,25 +30,21 @@ class Solution
   }
     long long minTime(int a[], int n, int k)
     {
-        // code here
-        // return minimum time
         long long low = 0, high=0,mid,i=0;
         while(i<n){
             low = max(low,(long long)a[i]);
             high +=a[i];
             i++;
         }
-        long long ans=high;
         while(low<=high){
             mid = low+(high-low)/2;
             if(isFeasible(a,n,k,mid)){
                 high = mid-1;
-                ans=min(ans,mid);
             }else{
                 low = mid +1;
             }
         }
-        return ans;
+        return low;
     }
 };
 
